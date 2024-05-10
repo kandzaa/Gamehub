@@ -14,7 +14,9 @@ Route::get('/', function () {
 
 Route::get('/about', function () {
     return view('about');
-})->middleware(['auth', 'verified'])->name('about');
+})
+->middleware(['auth', 'verified'])
+->name('about');
 
 Route::get('/browse', [GameController::class, 'browse'])
     ->middleware(['auth', 'verified'])

@@ -24,7 +24,7 @@
                 <form class="mt-6" method="POST" action="{{ route('comments.store') }}">
                     @csrf
                     <input type="hidden" name="game_id" value="{{ $game->id }}">
-                    <textarea class="w-full p-2 bg-gray-800 text-white border border-gray-600 rounded border-transparent focus:border-transparent focus:ring-0" name="comment"></textarea>
+                    <textarea class="w-full p-2 bg-gray-800 text-white border border-gray-600 rounded border-transparent focus:border-transparent focus:ring-0 resize-none" name="comment"></textarea>
                     <button class="mt-2 px-4 py-2 bg-neutral-950 text-green-500 rounded hover:bg-neutral-900" type="submit">Add Comment</button>
                 </form>
             </div>
