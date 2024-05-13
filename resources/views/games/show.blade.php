@@ -7,12 +7,12 @@
 
     <div class="p-6 bg-zinc-900 text-gray-300 overflow-hidden shadow-sm sm:rounded-lg">
         <div class="flex items-start space-x-6">
-            <img class="w-64 h-72 object-cover rounded-lg" src="{{ $game->image }}" alt="{{ $game->name }}">
+            <img class="w-64 h-72 object-cover rounded-lg select-none" src="{{ $game->image }}" alt="{{ $game->name }}">
 
             <div class="flex-1">
                 <p class="mt-6 text-gray-300">{{ $game->description }}</p>
 
-                <div class="mt-6 bg-neutral-950 p-6 rounded-lg overflow-auto" style="max-height: 600px;">
+                <div class="mt-6 bg-neutral-950 p-6 rounded-lg overflow-auto" style="max-height: 530px;">
                     @foreach ($game->comments as $comment)
                         <div class="border-b border-gray-200 py-4">
                             <h3 class="font-bold text-gray-300">{{ $comment->user->name }}</h3>

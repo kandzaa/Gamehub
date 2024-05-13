@@ -14,13 +14,13 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
        // Call the User factory to create 50 users
-    \App\Models\User::factory(5)->create();
+    \App\Models\User::factory(3)->create();
 
     // Call the Game factory to create 50 games
-    \App\Models\Game::factory(5)->create();
+    \App\Models\Game::factory(3)->create();
 
     // Call the Comment factory to create 50 comments
-    \App\Models\Comment::factory(5)->create();
+    \App\Models\Comment::factory(3)->create();
 
     // Call the GameSeeder
     $this->call([

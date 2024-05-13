@@ -27,6 +27,5 @@ class NewsSeeder extends Seeder
             'image' => 'sample2.jpg',
         ]);
 
-        // Add more news articles as needed
     }
 }

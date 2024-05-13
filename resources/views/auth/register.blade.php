@@ -1,4 +1,25 @@
+<nav class="bg-neutral-950 border-b border-gray-700">
+    <header class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-center ">
+        @if (Route::has('login'))
+            <nav class="space-x-4 ">
+            @auth
+                    <a href="{{ url('/home') }}" class="text-gray-300 hover:text-green-500"
+                    >Home</a>
+                @else
+                    <a href="{{ route('login') }}" class="text-gray-300 hover:text-green-500"
+                    >Log in
+                    </a>
 
+                @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="text-gray-300 hover:text-green-500"
+                        >Register
+                        </a>
+                @endif
+            @endauth
+            </nav>
+        @endif
+    </header>
+</nav>
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
@@ -41,10 +62,6 @@
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
             <x-primary-button class="ms-4">
                 {{ __('Register') }}
             </x-primary-button>

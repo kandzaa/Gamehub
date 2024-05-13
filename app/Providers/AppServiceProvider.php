@@ -1,26 +1,31 @@
 <?php
 
+namespace App\Providers;
 
-namespace App\Models;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\ServiceProvider;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-
-class User extends Authenticatable
+class AppServiceProvider extends ServiceProvider
 {
-    use HasFactory, Notifiable;
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
 
     /**
-     * Determine if the user is an administrator.
+     * Bootstrap any application services.
      *
-     * @return bool
+     * @return void
      */
-    public function isAdmin(): bool
+    public function boot()
     {
-        // Logic to determine if the user is an administrator
-        // For example, check if the user has an 'admin' role
-        return $this->role === 'admin';
+        Gate::define('admin', function ($user) {
+            return $user->admin; 
+        });
     }
 }
-
